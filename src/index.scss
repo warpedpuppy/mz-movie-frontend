@@ -1,0 +1,137 @@
+$main-color: #1030AD;
+$second-color: #FFCC00;
+$font: 'Oxygen', sans-serif;
+
+* {
+  display: box;
+}
+
+.my-flix-title {
+  margin: auto;
+  text-align: center;
+  padding: 20px 0;
+  font-family: $font;
+  font-weight: bold;
+  color: $main-color;
+}
+
+.login-form {
+  text-align: center;
+  // width: 100%;
+  // max-width: 100%;
+  padding: 15px;
+  margin: auto;
+}
+
+.user-input, .password-input {
+  width: 350px;
+}
+
+.login-button {
+  margin: 5px;
+  background-color: $main-color;
+  font-family: $font;
+  font-weight: bold;
+  color: $second-color;
+  width: 160px;
+  border-style: 2px solid $second-color;
+}
+
+.back-button {
+  margin: 5px;
+  background-color: $main-color;
+  font-family: $font;
+  font-weight: bold;
+  color: $second-color;
+  width: 160px;
+  border-style: 2px solid $second-color;
+}
+
+.back-button {
+  margin: 5px;
+  background-color: $main-color;
+  font-family: $font;
+  font-weight: bold;
+  color: $second-color;
+  width: 200px;
+  border-style: 2px solid $second-color;
+}
+
+.back-button:hover {
+  text-decoration: none;
+  color: $second-color;
+}
+
+.register-button {
+  margin: 5px;
+  background-color: $second-color;
+  color: $main-color;
+  font-family: $font;
+  font-weight: bold;
+  width: 160px;
+}
+
+.login-button:hover {
+  color: $second-color;
+  background-color: $main-color;
+}
+
+.register-button:hover {
+  color: $main-color;
+  background-color: $second-color;
+  text-decoration: none;
+}
+
+.nav-button {
+  color: $main-color;
+  background-color: $second-color;
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  text-decoration: none;
+}
+
+.movie-card-button {
+  margin: 5px;
+  background-color: $main-color;
+  font-family: $font;
+  font-weight: bold;
+  color: $second-color;
+  width: 160px;
+}
+
+.movie-card-button:hover {
+  color: $second-color;
+  background-color: $main-color;
+  text-decoration: none;
+}
+
+.movie-view {
+  text-align: center;
+  max-width: 36rem;
+  margin: auto;
+}
+
+.movie-poster {
+  max-width: 22rem;
+}
+
+.movie-view-button {
+  margin: 5px;
+  background-color: $main-color;
+  font-family: $font;
+  font-weight: bold;
+  color: $second-color;
+  width: 160px;
+}
+
+.movie-view-button:hover {
+  color: $second-color;
+  background-color: $main-color;
+  text-decoration: none;
+}
+
+.label {
+  color: $second-color;
+}
