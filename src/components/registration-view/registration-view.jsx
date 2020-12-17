@@ -22,7 +22,7 @@ export function RegistrationView(props) {
     // props.onLoggedIn(username);  // Why do I need this? Works fine without it
 
     if(isValid) {     
-      axios.post(`${Config.REMOTE_API}/users`, {  //REMOTE_API  LOCAL_API
+      axios.post(`${Config.API_URL}/users`, {  
         username: username,
         Password: password,
         email: email,

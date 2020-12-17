@@ -49,7 +49,7 @@ export class MainView extends React.Component {
 //  }
 
  getMovies(token) {
-   axios.get(`${Config.REMOTE_API}/movies`, {  //REMOTE_API  LOCAL_API
+   axios.get(`${Config.API_URL}/movies`, {  
      headers: { Authorization: `Bearer ${token}`}
    })
    .then(response => { //Assign the result to the state

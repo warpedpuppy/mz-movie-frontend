@@ -36,7 +36,7 @@ export class ProfileView extends React.Component {
 
     const user = localStorage.getItem('user');
 
-    axios.get(`${Config.REMOTE_API}/users/${user}`, { //REMOTE_API  LOCAL_API
+    axios.get(`${Config.API_URL}/users/${user}`, { 
       headers: {Authorization: `Bearer ${token}`},
     })
     .then((response) => {
@@ -61,7 +61,7 @@ export class ProfileView extends React.Component {
     const user = localStorage.getItem('user'); 
     const token = localStorage.getItem('token'); 
 
-    axios.put(`${Config.REMOTE_API}/users/${user}`, {
+    axios.put(`${Config.API_URL}/users/${user}`, {
       username: this.username,
       password: this.password,
       email: this.email,
@@ -88,7 +88,7 @@ export class ProfileView extends React.Component {
     const user = localStorage.getItem('user');
     const token = localStorage.getItem('token');
 
-    axios.delete(`${Config.REMOTE_API}/users/${user}`, {
+    axios.delete(`${Config.API_URL}/users/${user}`, {
       headers: {Authorization: `Bearer ${token}`}, 
     })
     .then((response) => {
@@ -115,7 +115,7 @@ export class ProfileView extends React.Component {
     const user = localStorage.getItem('user');
     const token = localStorage.getItem('token');
 
-    axios.delete(`${Config.REMOTE_API}/users/${user}/movies/${movie.id}`, {
+    axios.delete(`${Config.API_URL}/users/${user}/movies/${movie.id}`, {
       headers: {Authorization: `Bearer ${token}`}, 
     })
     .then((response) => {
