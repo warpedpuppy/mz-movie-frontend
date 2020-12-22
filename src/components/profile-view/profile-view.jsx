@@ -12,23 +12,7 @@ export class ProfileView extends React.Component {
   constructor(props) {
     super(props);
 
-  // this.username = undefined;
-  // this.password = undefined;
-  // this.email = undefined;
-  // this.birthday = undefined;
-
-  // this.username = null,
-  // this.password = null,
-  // this.email = null, 
-  // this.birthday = null
-
   this.state = {
-    // user: null,
-    // username: '',
-    // password: '',
-    // email: '',
-    // birthday: null,
-    // favouriteMovies: []
     username: '', 
     password: '', 
     email: '', 
@@ -38,7 +22,6 @@ export class ProfileView extends React.Component {
   }
 
   componentDidMount() {
-    
     const getToken = localStorage.getItem('token');
     this.getUser(getToken);
   }
@@ -55,7 +38,7 @@ export class ProfileView extends React.Component {
         username: response.data.username,
         password: response.data.password,
         email: response.data.email,
-        birthday: response.data.birthday,
+        birthday: this.truncate(response.data.birthday),
         favouriteMovies: response.data.favouriteMovies
       });
     })
@@ -78,24 +61,18 @@ export class ProfileView extends React.Component {
       password: this.state.password,
       email: this.state.email,
       birthday: this.state.birthday
-      
-      // user: this.user, 
-      // username: this.username,
-      // password: this.password,
-      // email: this.email,
-      // birthday: this.birthday
     },
     {
       headers: {Authorization: `Bearer ${token}`},
     })
     .then(response => {
       const data = response.data;
-      console.log(data);
+      console.log('response received', data);
       this.setState({
         username: data.username,
         password: data.password,
         email: data.email,
-        birthday: data.birthday
+        birthday: this.truncate(data.birthday)
       })
       localStorage.setItem('user', data.username); //data.username
       // window.open('/profile', '_self'); 
@@ -170,6 +147,10 @@ export class ProfileView extends React.Component {
   setBirthday(birthday) {
     this.setState({birthday})
   }
+  
+  truncate (str) {
+    return str.substring(0, str.indexOf("T"))
+  }
 
   render() {
 
@@ -214,7 +195,7 @@ export class ProfileView extends React.Component {
               <Form.Group>
                 <Form.Control
                   type='date' placeholder='Enter new birthday' name='birthday' 
-                  onChange={(e) => this.setBirthday(e.target.value)}  />
+                  value={this.state.birthday} onChange={(e) => this.setBirthday(e.target.value)}  />
               </Form.Group> 
               
               <Button type='submit' className='login-button' onClick={this.handleUpdate}>UPDATE</Button>
